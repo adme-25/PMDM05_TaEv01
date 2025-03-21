@@ -2,7 +2,6 @@ import { CamaraService } from './../../servicios/camara.service';
 import { SpeechService } from './../../servicios/speech.service';
 import { Component, OnInit } from '@angular/core';
 import { SpeechRecognition } from '@capacitor-community/speech-recognition';
-import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-voz',
@@ -47,21 +46,5 @@ export class VozPage implements OnInit {
     this.recording =false;
     await SpeechRecognition.stop();
   }
-  async sharePhoto() {
-    if (this.photo) {
-      try {
-        await Share.share({
-          title: 'Mira esta foto',
-          text: 'Te comparto una foto que tomé',
-          url: this.photo, // Usar la URL del archivo
-          dialogTitle: 'Compartir Foto',
-        });
-      } catch (error) {
-        console.error('Error al compartir la foto:', error);
-      }
-    } else {
-      console.warn('No hay foto para compartir');
-    }
-  }
+
 }
-  
