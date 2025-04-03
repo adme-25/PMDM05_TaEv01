@@ -203,6 +203,15 @@ let GeolocalizacionLeafletPage = class GeolocalizacionLeafletPage {
             maxZoom: 18,
             attribution: '© OpenStreetMap contributors'
         }).addTo(this.map);
+        this.myicon = leaflet__WEBPACK_IMPORTED_MODULE_2__.icon({
+            iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+            shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+            iconSize: [24, 39],
+            iconAnchor: [16, 87],
+            popupAnchor: [-3, -76]
+        });
+        leaflet__WEBPACK_IMPORTED_MODULE_2__.marker([40.416729, -3.703339], { icon: this.myicon }).addTo(this.map);
+        leaflet__WEBPACK_IMPORTED_MODULE_2__.marker([39.8581, -4.02263], { icon: this.myicon, zIndexOffset: 1000 }).addTo(this.map).bindPopup("Toledo").openPopup();
         leaflet__WEBPACK_IMPORTED_MODULE_2__.Routing.control({
             waypoints: [
                 leaflet__WEBPACK_IMPORTED_MODULE_2__.latLng(40.416729, -3.703339),

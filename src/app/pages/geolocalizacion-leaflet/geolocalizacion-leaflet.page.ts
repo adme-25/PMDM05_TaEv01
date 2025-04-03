@@ -29,20 +29,12 @@ export class GeolocalizacionLeafletPage implements OnInit {
       attribution: '© OpenStreetMap contributors'
     }).addTo(this.map);
 
-    L.marker([ 39.8581, -4.02263], {
-      icon: L.icon({
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-        iconSize:     [24, 39],
-        iconAnchor:   [16, 87],
-        popupAnchor:  [-3, -76]
-      })
-    } ).addTo(this.map).bindPopup("Toledo").openPopup();
+    L.marker([39.958496, -3.500700]).addTo(this.map).bindPopup("Ocaña").openPopup();
 
     L.Routing.control({
       waypoints: [
           L.latLng(40.416729, -3.703339),
-          L.latLng(39.8581, -4.02263)
+          L.latLng(39.958496, -3.500700)
       ],
       lineOptions: {
         styles: [{ color: 'blue', weight: 3 }],
